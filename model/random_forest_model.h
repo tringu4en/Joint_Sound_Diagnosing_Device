@@ -1,4 +1,4 @@
-
+// Generated with the design of Tan Tri Nguyen, BME student K23
 
 
     // !!! This file is generated using emlearn !!!
@@ -2121,4 +2121,5 @@ int joint_status_rf_predict_proba(const float *features, int32_t features_length
         }
         return 0;
     }
+
     
