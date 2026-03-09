@@ -6,14 +6,14 @@
 #include <BLEServer.h>
 #include <BLEUtils.h>
 
-// --- Pin Configuration ---
+// Pin Configuration 
 #define I2S_DOUT   2
 #define I2S_BCLK   1
 #define I2S_LRCLK  3  
 #define BUTTON_PIN 13
 #define RGB_PIN    48  
 
-// --- Audio Configuration ---
+// Audio Configuration
 #define I2S_PORT I2S_NUM_0
 #define SAMPLE_RATE 16000
 #define CHUNK_SIZE 1024
@@ -23,16 +23,16 @@ int16_t audio_buffer[MAX_SAMPLES];
 volatile int total_samples_recorded = 0;
 int32_t raw_samples[CHUNK_SIZE];
 
-// --- State Machine ---
+// State Machine
 enum SystemState { WAITING_BLE, IDLE, RECORDING, DONE };
 SystemState current_state = WAITING_BLE;
 
-// --- DSP & FFT Configuration ---
+// DSP & FFT Configuration
 #define FFT_SIZE 2048
 float fft_workspace[FFT_SIZE * 2]; 
 float hann_window[FFT_SIZE];
 
-// --- BLE Configuration ---
+// BLE Configuration
 BLEServer* pServer = NULL;
 BLECharacteristic* pCharacteristic = NULL;
 bool deviceConnected = false;
@@ -51,7 +51,7 @@ class MyServerCallbacks: public BLEServerCallbacks {
     }
 };
 
-// --- RGB LED Helper ---
+// RGB LED Helper
 void setRGB(uint8_t r, uint8_t g, uint8_t b) {
   neopixelWrite(RGB_PIN, r / 4, g / 4, b / 4);
 }
