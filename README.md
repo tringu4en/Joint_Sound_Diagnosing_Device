@@ -6,7 +6,7 @@
 [![Category: Hardware](https://img.shields.io/badge/Category-Biomedical_Device-blue)]()
 ![Platform](https://img.shields.io/badge/Platform-ESP32-blue)
 
-![Device Outside](hardware/device_outside.jpg)
+![Device Outside](hardware/Outside_design(1).png)
 ![Device Inside](hardware/device_inside.jpg)
 
 ## 📖 Overview
