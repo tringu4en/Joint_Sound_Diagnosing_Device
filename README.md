@@ -26,15 +26,17 @@ The wearable node is designed with ergonomics and mobility in mind, featuring a 
 To optimize power consumption and guarantee patient privacy, all critical data processing occurs locally on the ESP32-S3.
 * **Data Acquisition & Filtering:** The raw acoustic signals are captured and passed through a Butterworth bandpass filter (100–1000 Hz) to isolate joint emissions from ambient environmental noise.
 * **Feature Extraction:** The microcontroller computes key acoustic features in real-time, including:
-  * Zero Crossing Rate (ZCR)
-  * Short-time Energy
-  * Simplified Mel-Frequency Cepstral Coefficients (MFCCs)
-* **Classification Model:** A lightweight **Decision Tree** algorithm is embedded directly into the C++ firmware. Trained initially using Scikit-learn, this model evaluates the extracted features and outputs a diagnosis with ultra-low latency.
+  * Mean Frequency
+  * Zero Crossing Rate
+  * Peak Frequency
+  * RMS Amplitude
+  * Spectral Entropy
+* **Classification Model:** A lightweight **Random Forest** algorithm is embedded directly into the C++ firmware. Trained initially using Scikit-learn, this model evaluates the extracted features and outputs a diagnosis with ultra-low latency.
 
 ### 3. PC Monitoring Software
 A robust desktop application allows medical professionals to visualize and manage patient data. 
 * **Framework:** Built with Python and **PyQt6** for a modern, fluid user interface.
-* **Analysis Tools:** Utilizes NumPy and SciPy to render real-time waveforms and Fast Fourier Transform (FFT) spectrograms.
+* **Analysis Tools:** Utilizes NumPy and SciPy to render real-time waveforms, Fast Fourier Transform (FFT), and spectrograms.
 * **Data Management:** Features SQLite/CSV database integration to securely store patient records and historical diagnostic data.
 * **Connectivity:** Receives diagnostic results and telemetry from the wearable device via Bluetooth Low Energy (BLE) and Serial communication.
 
@@ -44,8 +46,8 @@ A robust desktop application allows medical professionals to visualize and manag
 * **Electronic Health Record (EHR) Integration:** Creating standardized APIs to sync device telemetry with broader hospital databases.
 
 ## 📁 Repository Structure
-* `/hardware`: PCB schematics, component lists, and 3D files for the ergonomic case.
-* `/firmware`: ESP32-S3 C++ source code containing the I2S drivers, DSP filtering algorithms, and the embedded Decision Tree logic.
+* `/hardware`: Electrical schematics, component lists, and 3D files for the ergonomic case.
+* `/firmware`: ESP32-S3 C++ source code containing the I2S drivers, DSP filtering algorithms, and the embedded Random Forest logic.
 * `/software`: PyQt6 desktop application source code for real-time visualization and database management.
 * `/model`: Scikit-learn training scripts, dataset processing tools, and the scripts used to convert the model to C++ headers.
 * `/docs`: Project presentation posters, performance graphs, and detailed system methodology.
