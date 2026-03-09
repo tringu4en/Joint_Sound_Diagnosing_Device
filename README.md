@@ -2,6 +2,10 @@
 
 **Design and development of a wearable system for diagnosing joint conditions via acoustic analysis of movement-induced sounds.**
 
+[![Project Status: Prototype Completed](https://img.shields.io/badge/Status-Prototype_Completed-green)]()
+[![Category: Hardware](https://img.shields.io/badge/Category-Biomedical_Device-blue)]()
+![Platform](https://img.shields.io/badge/Platform-ESP32-blue)
+
 ![Device Outside](hardware/device_outside.jpg)
 ![Device Inside](hardware/device_inside.jpg)
 
