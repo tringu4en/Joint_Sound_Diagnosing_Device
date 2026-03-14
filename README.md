@@ -50,7 +50,7 @@ A robust desktop application allows medical professionals to visualize and manag
 * `/firmware`: ESP32-S3 C++ source code containing the I2S drivers, DSP filtering algorithms, and the embedded Random Forest logic.
 * `/software`: PyQt6 desktop application source code for real-time visualization and database management.
 * `/model`: Scikit-learn training scripts, dataset processing tools, and the scripts used to convert the model to C++ headers.
-* `/docs`: Project presentation posters, performance graphs, and detailed system methodology.
+* `/docs`: Project presentation posters, performance graphs, and other documents.
 
 ## 🤝 Authors & Acknowledgements
 * **Project Lead:** Nguyen Tan Tri 
